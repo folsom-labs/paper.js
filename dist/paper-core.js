@@ -1,5 +1,5 @@
 /*!
- * Paper.js v0.10.2 - The Swiss Army Knife of Vector Graphics Scripting.
+ * Paper.js v0.10.2-0.10.2-lite - The Swiss Army Knife of Vector Graphics Scripting.
  * http://paperjs.org/
  *
  * Copyright (c) 2011 - 2016, Juerg Lehni & Jonathan Puckey
@@ -9,7 +9,7 @@
  *
  * All rights reserved.
  *
- * Date: Sat Jul 9 20:56:58 2016 +0200
+ * Date: Wed Jul 13 14:39:19 2016 -0700
  *
  ***
  *
@@ -32,7 +32,7 @@
 
 var paper = function(self, undefined) {
 
-var window = self ? self.window : require('./node/window'),
+var window = self.window,
 	document = window && window.document;
 
 self = self || window;
@@ -150,7 +150,7 @@ var Base = new function() {
 	}
 
 	return inject(function Base() {
-		set(this, arguments, 0);
+		return set(this, arguments, 0);
 	}, {
 		inject: function(src) {
 			if (src) {
@@ -769,7 +769,7 @@ var PaperScope = Base.extend({
 		}
 	},
 
-	version: "0.10.2",
+	version: "0.10.2-0.10.2-lite",
 
 	getView: function() {
 		var project = this.project;
@@ -14235,9 +14235,6 @@ paper = new (PaperScope.inject(Base.exports, {
 	Symbol: SymbolDefinition,
 	PlacedSymbol: SymbolItem
 }))();
-
-if (paper.agent.node)
-	require('./node/extend')(paper);
 
 if (typeof define === 'function' && define.amd) {
 	define('paper', paper);

@@ -13,7 +13,7 @@
     "Jürg Lehni <juerg@scratchdisk.com> (http://scratchdisk.com)",
     "Jonathan Puckey <jonathan@studiomoniker.com> (http://studiomoniker.com)"
   ],
-  "main": "dist/paper-full.js",
+  "main": "dist/paper-core.js",
   "scripts": {
     "prepublish": "gulp build minify docs",
     "precommit": "gulp jshint",
@@ -39,9 +39,6 @@
   "dependencies": {
     "jsdom": "^9.4.0",
     "source-map-support": "^0.4.0"
-  },
-  "optionalDependencies": {
-    "canvas": "^1.3.5"
   },
   "devDependencies": {
     "acorn": "~0.5.0",
